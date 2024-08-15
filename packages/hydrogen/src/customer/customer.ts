@@ -526,17 +526,21 @@ export function createCustomerAccountClient({
         );
       }
 
-      const customerAccessToken = await exchangeAccessToken(
-        access_token,
-        customerAccountId,
-        getCustomerAccountUrl(URL_TYPE.TOKEN_EXCHANGE),
-        httpsOrigin,
-        {
-          waitUntil,
-          stackInfo,
-          ...getDebugHeaders(request),
-        },
-      );
+      let customerAccessToken = access_token;
+
+      if (!shopId) {
+        customerAccessToken = await exchangeAccessToken(
+          access_token,
+          customerAccountId,
+          getCustomerAccountUrl(URL_TYPE.TOKEN_EXCHANGE),
+          httpsOrigin,
+          {
+            waitUntil,
+            stackInfo,
+            ...getDebugHeaders(request),
+          },
+        );
+      }
 
       const redirectPath = session.get(
         CUSTOMER_ACCOUNT_SESSION_KEY,

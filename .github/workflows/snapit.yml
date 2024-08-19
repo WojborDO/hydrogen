@@ -35,7 +35,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create snapshot version
-        uses: Shopify/snapit@main
+        uses: Shopify/snapit@f9e1c0990888000fb4b2e622319ee69e2dc84e67 # pin@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

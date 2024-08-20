@@ -1,5 +1,11 @@
 # @shopify/hydrogen
 
+## 2024.7.5
+
+### Patch Changes
+
+- createCartHandler supplies updateGiftCardCodes method ([#2298](https://github.com/Shopify/hydrogen/pull/2298)) by [@wizardlyhel](https://github.com/wizardlyhel)
+
 ## 2024.7.4
 
 ### Patch Changes
